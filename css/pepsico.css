@@ -31,6 +31,24 @@
 .testimonial-name { font-size: 16px; font-weight: 600; color: var(--ink); }
 .testimonial-role { font-size: 13px; color: var(--ink-60); }
 
+/* ── DESIGN-FILE CTA (matches About "View work" link) ── */
+.ba-cta-row { text-align: center; margin-top: 32px; }
+.cs-design-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 48px;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: 100px;
+}
+.cs-design-link span { display: inline-block; transition: transform 0.3s ease; }
+.cs-design-link:hover span { transform: translateX(4px); }
+
 /* ── BEFORE/AFTER PHONE MOCKUPS (full device, side by side) ── */
 .cs-image-card.phone .cs-image-frame {
   height: auto;
@@ -73,6 +91,8 @@
 /* ── RESPONSIVE (unique components only) ───── */
 @media (max-width: 767px) {
   .testimonial { padding: 56px 24px; }
+  .ba-cta-row { margin-top: 24px; }
+  .cs-design-link { padding: 16px 24px; }
   .cs-image-card.phone .cs-image-frame { height: auto; padding: 24px 16px; }
   .cs-image-card.phone .cs-image-crop img { max-height: 360px; filter: drop-shadow(0 6px 14px rgba(16,29,66,0.16)); }
   .cs-lightbox-scroll { padding: 80px 0 0; min-height: 100dvh; }
