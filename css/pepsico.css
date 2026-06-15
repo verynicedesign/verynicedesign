@@ -31,7 +31,52 @@
 .testimonial-name { font-size: 16px; font-weight: 600; color: var(--ink); }
 .testimonial-role { font-size: 13px; color: var(--ink-60); }
 
+/* ── BEFORE/AFTER PHONE MOCKUPS (full device, side by side) ── */
+.cs-image-card.phone .cs-image-frame {
+  height: auto;
+  padding: 48px 40px;
+  justify-content: center;
+  overflow: visible;
+}
+.cs-image-card.phone .cs-image-crop {
+  width: auto;
+  flex: 0 0 auto;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  overflow: visible;
+}
+.cs-image-card.phone .cs-image-crop img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 560px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 12px 26px rgba(16,29,66,0.16));
+}
+
+/* ── LIGHTBOX (shared case-study pattern) ──── */
+.cs-lightbox { position: fixed; inset: 0; z-index: 9999; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+.cs-lightbox.open { opacity: 1; visibility: visible; }
+.cs-lightbox-backdrop { position: fixed; inset: 0; background: rgba(26,26,26,0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.cs-lightbox-scroll { position: fixed; inset: 0; overflow: auto; display: block; padding: 80px 24px 48px; text-align: center; scrollbar-width: none; -ms-overflow-style: none; }
+.cs-lightbox-scroll::-webkit-scrollbar { display: none; }
+.cs-lightbox-scroll img { max-width: 700px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 40px rgba(0,0,0,0.3); cursor: none; transition: max-width 0.3s ease, opacity 0.2s ease; display: inline-block; }
+.cs-lightbox-scroll img.zoomed { max-width: 90vw !important; cursor: none; }
+.cs-lightbox-scroll img.zoomed-full { max-width: 150vw !important; width: 150vw; flex-shrink: 0; cursor: none; }
+.cs-lightbox-scroll img.zoomed-full.dragging { cursor: none; }
+.cs-lightbox-close { position: fixed; top: 24px; right: 24px; z-index: 10000; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(250,247,242,0.1); border: 1px solid rgba(250,247,242,0.15); border-radius: 50%; cursor: none; color: rgba(250,247,242,0.8); transition: all 0.2s ease; }
+.cs-lightbox-close:hover { background: rgba(250,247,242,0.2); color: #FAF7F2; }
+
 /* ── RESPONSIVE (unique components only) ───── */
 @media (max-width: 767px) {
   .testimonial { padding: 56px 24px; }
+  .cs-image-card.phone .cs-image-frame { height: auto; padding: 24px 16px; }
+  .cs-image-card.phone .cs-image-crop img { max-height: 360px; filter: drop-shadow(0 6px 14px rgba(16,29,66,0.16)); }
+  .cs-lightbox-scroll { padding: 80px 0 0; min-height: 100dvh; }
+  .cs-lightbox-close { top: 16px; right: 16px; }
+  .cs-lightbox-scroll img.wide-lightbox { min-width: 1800px; width: 1800px; max-width: none; cursor: zoom-in; }
+  .cs-lightbox-scroll img.wide-lightbox.zoomed-full { min-width: 2800px; width: 2800px; max-width: none; cursor: zoom-out; }
 }
