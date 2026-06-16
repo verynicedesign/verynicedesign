@@ -57,6 +57,35 @@
   box-shadow: 5px 6px 0 0 #C5CA7A;
 }
 
+/* ── FINAL-HOME ROW: laptop + phone shown as full devices ── */
+.final-home-row .cs-image-frame {
+  height: 440px;
+  padding: 36px;
+  justify-content: center;
+  overflow: visible;
+}
+.final-home-row .cs-image-crop {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  overflow: visible;
+}
+.final-home-row .cs-image-crop img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 12px 26px rgba(16,29,66,0.16));
+}
+
 /* ── BEFORE/AFTER PHONE MOCKUPS (full device, side by side) ── */
 .cs-image-card.phone .cs-image-frame {
   height: auto;
@@ -100,6 +129,7 @@
 @media (max-width: 767px) {
   .testimonial { padding: 56px 24px; }
   .design-cta { padding: 56px 24px; }
+  .final-home-row .cs-image-frame { height: 300px; padding: 20px; }
   .cs-image-card.phone .cs-image-frame { height: auto; padding: 24px 16px; }
   .cs-image-card.phone .cs-image-crop img { max-height: 360px; filter: drop-shadow(0 6px 14px rgba(16,29,66,0.16)); }
   .cs-lightbox-scroll { padding: 80px 0 0; min-height: 100dvh; }

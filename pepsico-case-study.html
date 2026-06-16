@@ -252,14 +252,22 @@
 
 <hr class="section-rule">
 
-<div class="cs-image-row reveal">
-  <div class="cs-image-card">
-    <div class="cs-image-frame"><div class="cs-image-crop"></div></div>
-    <p class="cs-image-label">Final — Home (Today)</p>
+<div class="cs-image-row reveal final-home-row">
+  <div class="cs-image-card" data-fullsize="brand_assets/final-home-desktop.png">
+    <div class="cs-image-frame">
+      <div class="cs-image-crop">
+        <img src="brand_assets/final-home-desktop.png" alt="Redesigned myEveryDay home screen, desktop view" width="2667" height="1638" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <p class="cs-image-label">Final — Home (Desktop)</p>
   </div>
-  <div class="cs-image-card">
-    <div class="cs-image-frame"><div class="cs-image-crop"></div></div>
-    <p class="cs-image-label">Final — Search (Explore)</p>
+  <div class="cs-image-card" data-fullsize="brand_assets/final-home-mobile.png">
+    <div class="cs-image-frame">
+      <div class="cs-image-crop">
+        <img src="brand_assets/final-home-mobile.png" alt="Redesigned myEveryDay home screen, mobile view" width="818" height="1608" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <p class="cs-image-label">Final — Home (Mobile)</p>
   </div>
 </div>
 
@@ -368,7 +376,7 @@ document.querySelector('.metrics-bar')&&mo.observe(document.querySelector('.metr
 document.querySelectorAll('.cs-image-card[data-fullsize]').forEach(card=>{card.addEventListener('mouseenter',()=>{const i=new Image();i.src=card.dataset.fullsize;});});
 
 /* Lightbox */
-document.querySelectorAll('.cs-image-card[data-fullsize]').forEach(card=>{card.addEventListener('click',()=>{const f=card.dataset.fullsize;const isMobile=card.classList.contains('mobile')||card.classList.contains('phone');const isFull=card.classList.contains('cs-image-full');const img=document.getElementById('csLightboxImg');img.style.opacity='0';img.onload=()=>{img.style.opacity='1';};img.src=f;img.className='';img.style.maxWidth=isMobile?'260px':'700px';if(isFull){img.style.maxWidth='';if(window.innerWidth<=767){img.classList.add('wide-lightbox');}else{img.classList.add('zoomed');}}document.getElementById('csLightbox').classList.add('open');document.body.style.overflow='hidden';});});
+document.querySelectorAll('.cs-image-card[data-fullsize]').forEach(card=>{card.addEventListener('click',()=>{const f=card.dataset.fullsize;const isFull=card.classList.contains('cs-image-full');const img=document.getElementById('csLightboxImg');img.style.opacity='0';img.onload=()=>{img.style.opacity='1';if(!isFull){img.style.maxWidth=img.naturalHeight>=img.naturalWidth?'300px':'780px';}};img.src=f;img.className='';img.style.maxWidth='';if(isFull){if(window.innerWidth<=767){img.classList.add('wide-lightbox');}else{img.classList.add('zoomed');}}document.getElementById('csLightbox').classList.add('open');document.body.style.overflow='hidden';});});
 function closeLightbox(){const lb=document.getElementById('csLightbox');lb.classList.remove('open');document.body.style.overflow='';lb.querySelector('.cs-lightbox-scroll').scrollTop=0;const ci=document.getElementById('csLightboxImg');ci.classList.remove('zoomed');ci.classList.remove('zoomed-full');}
 document.querySelector('.cs-lightbox-close').addEventListener('click',closeLightbox);
 document.querySelector('.cs-lightbox-backdrop').addEventListener('click',closeLightbox);
