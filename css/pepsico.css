@@ -32,12 +32,12 @@
 .testimonial-role { font-size: 13px; color: var(--ink-60); }
 
 /* ── DESIGN-FILE CTA (matches About "View work" link) ── */
-.ba-cta-row { text-align: center; margin-top: 32px; }
+.ba-cta-row { text-align: left; margin-top: 32px; }
 .cs-design-link {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 16px 48px;
+  padding: 16px 0;
   font-family: 'Syne', sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -92,7 +92,6 @@
 @media (max-width: 767px) {
   .testimonial { padding: 56px 24px; }
   .ba-cta-row { margin-top: 24px; }
-  .cs-design-link { padding: 16px 24px; }
   .cs-image-card.phone .cs-image-frame { height: auto; padding: 24px 16px; }
   .cs-image-card.phone .cs-image-crop img { max-height: 360px; filter: drop-shadow(0 6px 14px rgba(16,29,66,0.16)); }
   .cs-lightbox-scroll { padding: 80px 0 0; min-height: 100dvh; }
